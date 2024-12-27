@@ -23,4 +23,4 @@ const Reactelements = {
 };
 const Mainroot = document.querySelector("#root");
 
-customRender(Reactelements, Mainroot);
+CustomRender(Reactelements, Mainroot);
