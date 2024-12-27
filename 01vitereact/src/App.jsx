@@ -1,4 +1,4 @@
-import Ani from "./Ani";
+import Ani from "./ani.jsx";
 function App() {
   return (
     <>
