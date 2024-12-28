@@ -1,4 +1,4 @@
-function CustomReact(Reactelements, container) {
+function CustomRender(Reactelements, container) {
   /*const domElement = document.createElement(Reactelements.type);
   domElement.innerHTML = Reactelements.children;
   domElement.setAttribute("href", Reactelements.props.href);
