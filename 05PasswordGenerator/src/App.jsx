@@ -3,18 +3,19 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [length, setLength] = useState(4);
+  const [length, setLength] = useState(6);
   const [numallow, setNumallow] = useState(false);
   const [charallow, setCharallow] = useState(false);
   const [password, setPassword] = useState("");
 
   const passref = useRef(null);
 
-  const generatePassword = useCallback(() => {
+  const PasswordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (numallow) str += "0123456789";
     if (charallow) str += "!@#$%^&*()_+-={}[]|:;<>,.?/~";
+
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
@@ -29,8 +30,8 @@ function App() {
   }, [password]);
 
   useEffect(() => {
-    generatePassword();
-  }, [length, numallow, charallow, generatePassword]);
+    PasswordGenerator();
+  }, [length, numallow, charallow, PasswordGenerator]);
 
   return (
     <>
