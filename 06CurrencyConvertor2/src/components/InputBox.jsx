@@ -1,17 +1,19 @@
-import React, { useId } from "react";
+import React from "react";
+import { useId } from "react";
 import PropTypes from "prop-types";
 
-function InputBox({
-  label,
-  amount,
-  onAmountChange,
-  onCurrencyChange,
-  currencyOptions = [],
-  selectCurrency = "usd",
-  amountDisable = false,
-  currencyDisable = false,
-  className = "",
-}) {
+function InputBox.PropTypes=( {
+  label: PropTypes.string,
+  amount: PropTypes.number,
+  onAmountChange: PropTypes.func,
+  onCurrencyChange: PropTypes.func,
+  currencyOptions: PropTypes.arrayOf(PropTypes),
+  selectCurrency: PropTypes.bool,
+  amountDisable: PropTypes.bool,
+  currencyDisable: PropTypes.bool,
+  className: PropTypes.string,
+}
+); {
   const amountInputId = useId();
 
   return (
